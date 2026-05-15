@@ -112,6 +112,34 @@ data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIA
   .hero-bottom-row{flex-direction:column;align-items:flex-start;}
 }
 
+/* HERO sub2 */
+.hero-brand-sub2{font-size:0.82rem;color:var(--muted);line-height:1.6;margin-top:0.5rem;letter-spacing:0.01em;}
+
+/* OUTCOMES STRIP */
+.outcomes-strip{padding:3rem 0;background:var(--earth);border-top:1px solid rgba(192,124,42,0.2);border-bottom:1px solid rgba(192,124,42,0.2);}
+.outcomes-label{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(192,124,42,0.7);text-align:center;margin-bottom:1.5rem;}
+.outcomes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:1280px;margin:0 auto;padding:0 2.5rem;}
+.outcome-item{display:flex;align-items:center;gap:0.7rem;padding:0.8rem 1rem;border-right:1px solid rgba(255,255,255,0.06);}
+.outcome-item:nth-child(4n){border-right:none;}
+.outcome-item:nth-child(n+5){border-top:1px solid rgba(255,255,255,0.06);}
+.oi-arrow{font-family:var(--ff-mono);font-size:1rem;color:var(--amber);flex-shrink:0;font-weight:700;}
+.oi-text{font-family:var(--ff-display);font-size:0.95rem;color:var(--cream);line-height:1.3;}
+@media(max-width:900px){.outcomes-grid{grid-template-columns:repeat(2,1fr);}.outcome-item:nth-child(2n){border-right:none;}}
+
+/* EMAIL CAPTURE */
+.email-capture{padding:6rem 0;background:var(--dark);border-top:1px solid var(--border-dark);}
+.ec-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.ec-title{font-family:var(--ff-display);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;color:#fff;margin-top:0.5rem;margin-bottom:0.8rem;line-height:1.1;}
+.ec-desc{font-size:0.85rem;color:var(--light-muted);line-height:1.85;}
+.ec-fields{display:flex;flex-direction:column;gap:0.8rem;}
+.ec-input{background:rgba(255,255,255,0.06);border:1px solid var(--border-dark);color:var(--cream);padding:0.85rem 1.1rem;font-family:var(--ff-body);font-size:0.88rem;outline:none;transition:border-color 0.2s;width:100%;}
+.ec-input:focus{border-color:var(--amber);}
+.ec-input::placeholder{color:var(--muted);}
+.ec-btn{background:var(--amber);color:var(--black);padding:0.9rem 1.5rem;font-family:var(--ff-body);font-size:0.75rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;border:none;cursor:pointer;transition:background 0.2s;}
+.ec-btn:hover{background:var(--amber-light);}
+.ec-note{font-family:var(--ff-mono);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:0.5rem;}
+@media(max-width:900px){.ec-inner{grid-template-columns:1fr;}}
+
 /* INDIA'S FIRST BAND */
 .india-first{background:linear-gradient(90deg,var(--near-black),var(--dark),var(--near-black));padding:2.2rem 2.5rem;border-top:1px solid rgba(192,124,42,0.4);border-bottom:1px solid rgba(192,124,42,0.2);text-align:center;}
 .india-first-inner{max-width:1280px;margin:0 auto;}
@@ -495,6 +523,7 @@ footer{background:var(--black);padding:5rem 2.5rem 2.5rem;border-top:1px solid v
     <li><a href="#ahmedabad">Ahmedabad</a></li>
     <li><a href="#kerala">Kerala</a></li>
     <li><a href="#framework">Framework</a></li>
+    <li><a href="#cbhpp">CBHPP</a></li>
     <li><a href="#investor">Investors</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -514,6 +543,7 @@ footer{background:var(--black);padding:5rem 2.5rem 2.5rem;border-top:1px solid v
         <div class="hero-brand-name">Anandamide</div>
         <div class="hero-brand-pillars">Movement &nbsp;<span class="hbp-dot">&bull;</span>&nbsp; Learning &nbsp;<span class="hbp-dot">&bull;</span>&nbsp; Well-being</div>
         <div class="hero-brand-tagline">Performance through Well-being</div>
+        <div class="hero-brand-sub2">Human Performance &amp; Self-Regulation for Athletes, Professionals and High Performers.</div>
       </div>
       <div class="hero-contact-block">
         <div class="hcb-name">Pradeep Ramachandran Pillay</div>
@@ -575,6 +605,24 @@ footer{background:var(--black);padding:5rem 2.5rem 2.5rem;border-top:1px solid v
     <div class="india-first-headline"><em>India's First</em> Integrated Human Performance Ecosystem</div>
   </div>
 </div>
+
+
+<!-- OUTCOMES STRIP -->
+<section class="outcomes-strip">
+  <div class="wrap">
+    <div class="outcomes-label">What you will achieve</div>
+    <div class="outcomes-grid">
+      <div class="outcome-item"><span class="oi-arrow">↑</span><span class="oi-text">Performance under pressure</span></div>
+      <div class="outcome-item"><span class="oi-arrow">↑</span><span class="oi-text">Focus &amp; sustained attention</span></div>
+      <div class="outcome-item"><span class="oi-arrow">↓</span><span class="oi-text">Burnout &amp; overtraining</span></div>
+      <div class="outcome-item"><span class="oi-arrow">↑</span><span class="oi-text">Athletic resilience &amp; recovery</span></div>
+      <div class="outcome-item"><span class="oi-arrow">↓</span><span class="oi-text">Stress &amp; nervous system reactivity</span></div>
+      <div class="outcome-item"><span class="oi-arrow">↑</span><span class="oi-text">Strength, movement &amp; conditioning</span></div>
+      <div class="outcome-item"><span class="oi-arrow">↑</span><span class="oi-text">Deep flow states &amp; peak performance</span></div>
+      <div class="outcome-item"><span class="oi-arrow">↑</span><span class="oi-text">Body composition &amp; sports nutrition</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- WHO IS THIS FOR -->
 <section class="audience" id="who" data-movement="movement" data-learning="learning" data-wellbeing="wellbeing">
@@ -1172,29 +1220,29 @@ yout">
         <div class="cbhpp-pill">
           <div class="cbhpp-pill-num">01</div>
           <div>
-            <div class="cbhpp-pill-title">Brain — Instrument of Survival</div>
-            <div class="cbhpp-pill-desc">The survival apparatus — reactive, externally-oriented, threat-focused. Neuroscience studies this well. CBHPP starts here and goes further.</div>
+            <div class="cbhpp-pill-title">Brain — The Survival Instrument</div>
+            <div class="cbhpp-pill-desc">The reactive, threat-focused survival apparatus. Neuroscience maps this well. CBHPP starts here — then goes further, into what becomes possible when the survival brain is no longer running the show.</div>
           </div>
         </div>
         <div class="cbhpp-pill">
           <div class="cbhpp-pill-num">02</div>
           <div>
-            <div class="cbhpp-pill-title">Mind — The Outward-Turning Organ</div>
-            <div class="cbhpp-pill-desc">The subtle organ that converts survival signals into narrative and identity. The mechanism that keeps the human being turned toward the external world.</div>
+            <div class="cbhpp-pill-title">Mind — Higher-Order Attentional Regulation</div>
+            <div class="cbhpp-pill-desc">The capacity to direct attention consciously — rather than being driven by reactive impulse. Training the mind is training the quality of every decision, every performance, every relationship.</div>
           </div>
         </div>
         <div class="cbhpp-pill">
           <div class="cbhpp-pill-num">03</div>
           <div>
-            <div class="cbhpp-pill-title">Awareness — Prior to Both</div>
-            <div class="cbhpp-pill-desc">Pure awareness — the witness that knows both brain states and mind activity. The field within which all experience arises. The starting point of the inward journey.</div>
+            <div class="cbhpp-pill-title">Awareness — Observer-Based Self-Regulation</div>
+            <div class="cbhpp-pill-desc">The capacity to observe your own mental and emotional states without being consumed by them. Meta-awareness: the foundation of sustainable high performance, regulation under pressure, and conscious living.</div>
           </div>
         </div>
         <div class="cbhpp-pill cbhpp-pill-highlight">
           <div class="cbhpp-pill-num">→</div>
           <div>
-            <div class="cbhpp-pill-title">Surviving vs Living</div>
-            <div class="cbhpp-pill-desc">Surviving: operating from the brain's fear-driven survival apparatus. Living: what becomes possible when the mind comes under conscious direction. This distinction is the heart of CBHPP — and of Anandamide's methodology.</div>
+            <div class="cbhpp-pill-title">From Surviving to Living</div>
+            <div class="cbhpp-pill-desc">Surviving: reactive, externally-driven, governed by stress and fear. Living: regulated, internally-grounded, performing from clarity rather than pressure. Conscious self-regulatory awareness is the bridge — and it is trainable.</div>
           </div>
         </div>
       </div>
@@ -1418,6 +1466,31 @@ ct-layout">
           <div class="f-note">anandamidesports.com · DPIIT Registered · Ahmedabad &amp; Kerala</div>
           <div id="form-success" style="display:none;margin-top:1rem;padding:1rem 1.5rem;background:rgba(74,122,76,0.2);border-left:2px solid #4a7a4c;font-size:0.85rem;color:#a8d4aa;">✓ Message sent. Pradeep will respond within 24 hours.</div>
           <div id="form-error" style="display:none;margin-top:1rem;padding:1rem 1.5rem;background:rgba(180,60,60,0.2);border-left:2px solid #b43c3c;font-size:0.85rem;color:#e8a8a8;">Something went wrong. Email directly: pradeep.pillay@gmail.com</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- EMAIL CAPTURE -->
+<section class="email-capture" id="email-capture">
+  <div class="wrap">
+    <div class="ec-inner">
+      <div class="ec-left">
+        <span class="tag" style="color:var(--amber);">Free Resource</span>
+        <h3 class="ec-title">Performance Without Burnout</h3>
+        <p class="ec-desc">5 principles of sustainable high performance — used with athletes, professionals and high performers across India and internationally. Free, practical, evidence-aware.</p>
+      </div>
+      <div class="ec-right">
+        <form class="ec-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+          <input type="hidden" name="_subject" value="Lead Magnet — Performance Without Burnout"/>
+          <div class="ec-fields">
+            <input type="text" name="name" placeholder="Your name" class="ec-input" required/>
+            <input type="email" name="email" placeholder="Your email" class="ec-input" required/>
+            <button type="submit" class="ec-btn">Send Me the Guide →</button>
+          </div>
+          <div class="ec-note">No spam. Unsubscribe anytime.</div>
         </form>
       </div>
     </div>
