@@ -145,6 +145,22 @@ data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIA
 .hfs-contact:hover{color:var(--amber);}
 .hfs-wa{color:#6aaa6c !important;font-weight:600;}
 
+/* Quick links in hero contact block */
+.hcb-quick-links{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.5rem;align-items:center;}
+.hcb-worldfirst{font-family:var(--ff-display);font-size:0.85rem;font-style:italic;color:var(--amber);margin-right:0.4rem;}
+.hcb-worldfirst em{font-style:normal;font-weight:600;color:#fff;}
+.hcb-qlink{font-family:var(--ff-mono);font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;background:rgba(45,74,46,0.3);color:#7ec880;padding:0.2rem 0.6rem;border:1px solid rgba(74,122,76,0.4);transition:background 0.2s;text-decoration:none;}
+.hcb-qlink:hover{background:rgba(74,122,76,0.5);color:#a8e0aa;}
+/* Program articles toggle */
+.prog-articles{margin:0.8rem 0;}
+.prog-articles-toggle{background:none;border:none;font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);cursor:pointer;padding:0;transition:color 0.2s;}
+.prog-articles-toggle:hover{color:var(--amber-light);}
+.prog-articles-list{display:flex;flex-direction:column;gap:0.4rem;margin-top:0.6rem;padding:0.8rem;background:var(--amber-pale);border-left:2px solid var(--amber);}
+.prog-article-link{font-size:0.78rem;color:var(--earth);text-decoration:none;transition:color 0.2s;line-height:1.5;}
+.prog-article-link:hover{color:var(--amber);}
+.prog-article-link.ext{color:var(--warm-mid);}
+.prog-article-link.ext:hover{color:var(--amber);}
+
 /* THREE AUDIENCE PILLS */
 .hero-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0.7rem;}
 .hero-pill,.hero-pill-card{display:flex;align-items:flex-start;gap:1rem;background:#131210;border:1px solid var(--border-dark);padding:0.8rem 1rem;transition:border-color 0.2s,background 0.2s;text-decoration:none;position:relative;z-index:5;}
@@ -162,7 +178,7 @@ data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIA
 .hero-worldfirst-bar em{font-style:normal;font-weight:600;color:#fff;}
 
 /* World's First inline under tagline */
-.hero-brand-worldfirst{font-family:var(--ff-display);font-size:clamp(1rem,1.8vw,1.5rem);font-style:italic;color:var(--amber);margin-top:0.4rem;letter-spacing:0.01em;}
+.hero-brand-worldfirst{font-family:var(--ff-display);font-size:clamp(1rem,1.8vw,1.5rem);font-style:italic;color:var(--amber);margin-top:1.2rem;letter-spacing:0.01em;}
 .hero-brand-worldfirst em{font-style:normal;font-weight:500;}
 /* HOW TO TRAIN — solid background so it doesn't bleed through pills */
 .hero-htt{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;padding:0.8rem 1.2rem;background:rgba(13,12,10,0.95);border:1px solid rgba(192,124,42,0.2);position:relative;z-index:3;}
@@ -680,6 +696,7 @@ footer{background:var(--black);padding:5rem 2.5rem 2.5rem;border-top:1px solid v
         <div class="hero-brand-name">Anandamide</div>
         <div class="hero-brand-pillars">Movement &nbsp;<span class="hbp-dot">&bull;</span>&nbsp; Learning &nbsp;<span class="hbp-dot">&bull;</span>&nbsp; Well-being</div>
         <div class="hero-brand-tagline">Performance through Well-being</div>
+        <div class="hero-brand-worldfirst"><em>World's First</em> Integrated Human Performance Ecosystem</div>
       </div>
       <div class="hero-contact-block">
         <div class="hcb-name">Pradeep Ramachandran Pillay</div>
@@ -696,6 +713,13 @@ footer{background:var(--black);padding:5rem 2.5rem 2.5rem;border-top:1px solid v
           <a href="mailto:pradeep.pillay@gmail.com" class="hcb-link">&#9993; pradeep.pillay@gmail.com</a>
           <a href="mailto:anandamide74@gmail.com" class="hcb-link">&#9993; anandamide74@gmail.com</a>
           <a href="https://wa.me/918128978746" target="_blank" class="hcb-link hcb-wa">&#128172; WhatsApp</a>
+        </div>
+        <div class="hcb-quick-links">
+          <a href="#programs" class="hcb-qlink">Sports Nutrition</a>
+          <a href="#programs" class="hcb-qlink">Mental Skills</a>
+          <a href="#programs" class="hcb-qlink">S&amp;C Training</a>
+          <a href="#programs" class="hcb-qlink">Biomechanics</a>
+          <a href="#programs" class="hcb-qlink">General Fitness</a>
         </div>
         <div class="hcb-tagline">Train the Mind to Train the Brain</div>
       </div>
@@ -720,8 +744,6 @@ footer{background:var(--black);padding:5rem 2.5rem 2.5rem;border-top:1px solid v
     </div>
 
     <!-- WORLD'S FIRST centered above Learning pill -->
-    <div class="hero-worldfirst-centered"><em>World's First</em> Integrated Human Performance Ecosystem</div>
-
     <!-- ROW 4: Three audience pills -->
     <div class="hero-pillars">
       <div class="hero-pill hero-pill-card">
@@ -1084,6 +1106,13 @@ ass="quadrant-intro">
           <li>Pre, intra &amp; post-training nutrition</li>
           <li>Body composition &amp; recovery nutrition</li>
         </ul>
+        <div class="prog-articles">
+          <button class="prog-articles-toggle" onclick="toggleArticles(this)">Resources &amp; Articles ▼</button>
+          <div class="prog-articles-list" style="display:none;">
+            <a href="article-template.html" class="prog-article-link">📄 Your article title here →</a>
+            <a href="#" target="_blank" class="prog-article-link ext">🔗 External article title here →</a>
+          </div>
+        </div>
         <a href="#contact" class="prog-apply">Enquire Now</a>
       </div>
       <!-- Sports Mental Skills -->
@@ -1098,6 +1127,13 @@ ass="quadrant-intro">
           <li>Pressure management &amp; competition mindset</li>
           <li>Self-regulation &amp; brain-mind training</li>
         </ul>
+        <div class="prog-articles">
+          <button class="prog-articles-toggle" onclick="toggleArticles(this)">Resources &amp; Articles ▼</button>
+          <div class="prog-articles-list" style="display:none;">
+            <a href="article-template.html" class="prog-article-link">📄 Your article title here →</a>
+            <a href="#" target="_blank" class="prog-article-link ext">🔗 External article title here →</a>
+          </div>
+        </div>
         <a href="#contact" class="prog-apply">Enquire Now</a>
       </div>
       <!-- Strength & Conditioning -->
@@ -1112,6 +1148,13 @@ ass="quadrant-intro">
           <li>Speed, agility &amp; endurance conditioning</li>
           <li>IRFU-affiliated methodology</li>
         </ul>
+        <div class="prog-articles">
+          <button class="prog-articles-toggle" onclick="toggleArticles(this)">Resources &amp; Articles ▼</button>
+          <div class="prog-articles-list" style="display:none;">
+            <a href="article-template.html" class="prog-article-link">📄 Your article title here →</a>
+            <a href="#" target="_blank" class="prog-article-link ext">🔗 External article title here →</a>
+          </div>
+        </div>
         <a href="#contact" class="prog-apply">Enquire Now</a>
       </div>
       <!-- Individual Fitness -->
@@ -1126,6 +1169,13 @@ ass="quadrant-intro">
           <li>Weight management &amp; body composition</li>
           <li>Movement quality &amp; injury resilience</li>
         </ul>
+        <div class="prog-articles">
+          <button class="prog-articles-toggle" onclick="toggleArticles(this)">Resources &amp; Articles ▼</button>
+          <div class="prog-articles-list" style="display:none;">
+            <a href="article-template.html" class="prog-article-link">📄 Your article title here →</a>
+            <a href="#" target="_blank" class="prog-article-link ext">🔗 External article title here →</a>
+          </div>
+        </div>
         <a href="#contact" class="prog-apply">Enquire Now</a>
       </div>
       <!-- Biomechanical Analysis -->
@@ -1140,6 +1190,13 @@ ass="quadrant-intro">
           <li>Sport-specific efficiency &amp; injury prevention</li>
           <li>Corrective exercise prescription</li>
         </ul>
+        <div class="prog-articles">
+          <button class="prog-articles-toggle" onclick="toggleArticles(this)">Resources &amp; Articles ▼</button>
+          <div class="prog-articles-list" style="display:none;">
+            <a href="article-template.html" class="prog-article-link">📄 Your article title here →</a>
+            <a href="#" target="_blank" class="prog-article-link ext">🔗 External article title here →</a>
+          </div>
+        </div>
         <a href="#contact" class="prog-apply">Enquire Now</a>
       </div>
       <!-- Sports Performance Analysis -->
@@ -1154,6 +1211,13 @@ ass="quadrant-intro">
           <li>Competition &amp; training analysis</li>
           <li>Evidence-based programme design</li>
         </ul>
+        <div class="prog-articles">
+          <button class="prog-articles-toggle" onclick="toggleArticles(this)">Resources &amp; Articles ▼</button>
+          <div class="prog-articles-list" style="display:none;">
+            <a href="article-template.html" class="prog-article-link">📄 Your article title here →</a>
+            <a href="#" target="_blank" class="prog-article-link ext">🔗 External article title here →</a>
+          </div>
+        </div>
         <a href="#contact" class="prog-apply">Enquire Now</a>
       </div>
     </div>
@@ -1700,6 +1764,13 @@ ct-layout">
 </a>
 
 <script>
+function toggleArticles(btn) {
+  var list = btn.nextElementSibling;
+  var open = list.style.display !== 'none';
+  list.style.display = open ? 'none' : 'flex';
+  btn.textContent = open ? 'Resources & Articles ▼' : 'Resources & Articles ▲';
+}
+
 // Form submission
 const form = document.getElementById('contactForm');
 if(form){
