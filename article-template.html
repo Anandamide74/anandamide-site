@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Article Title — Anandamide Sports Solutions</title>
+<meta name="description" content="Article description here."/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,700;1,300;1,500&family=Syne:wght@400;500;600;700&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0d0c0a;--near-black:#131210;--dark:#1c1a16;--earth:#2e2820;
+  --warm-mid:#5a4e3c;--muted:#8a7e6e;--light-muted:#b5a898;
+  --cream:#f4f0e8;--warm-white:#faf8f3;--amber:#c07c2a;
+  --amber-light:#e8a84a;--amber-pale:#f5e8ce;--moss-light:#4a7a4c;
+  --border-dark:rgba(255,255,255,0.08);--border-light:rgba(30,24,16,0.1);
+  --ff-display:'Cormorant Garamond',serif;
+  --ff-body:'Syne',sans-serif;--ff-mono:'IBM Plex Mono',monospace;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--ff-body);background:var(--warm-white);color:var(--earth);line-height:1.7;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+.wrap{max-width:1280px;margin:0 auto;padding:0 2.5rem;}
+.btn{display:inline-block;font-size:0.73rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.85rem 2rem;font-weight:600;border:none;transition:all 0.22s;font-family:var(--ff-body);cursor:pointer;}
+.btn-gold{background:var(--amber);color:var(--black);}
+.btn-gold:hover{background:var(--amber-light);}
+.btn-ghost{background:transparent;color:var(--earth);border:1px solid rgba(30,24,16,0.25);}
+.btn-ghost:hover{border-color:var(--amber);color:var(--amber);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem;background:rgba(13,12,10,0.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border-dark);}
+.nav-logo img{height:52px;width:auto;display:block;}
+.nav-links{display:flex;align-items:center;gap:2rem;}
+.nav-link{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--light-muted);transition:color 0.2s;}
+.nav-link:hover{color:var(--amber);}
+.nav-cta{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;background:var(--amber);color:var(--black);padding:0.6rem 1.4rem;font-weight:700;transition:background 0.2s;}
+.nav-cta:hover{background:var(--amber-light);}
+@media(max-width:700px){.nav-links{display:none;}}
+
+/* ARTICLE HERO */
+.article-hero{background:var(--black);padding:9rem 2.5rem 4rem;position:relative;overflow:hidden;}
+.article-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(192,124,42,0.1) 0%,transparent 70%);}
+.article-hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:2;}
+.article-category{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;}
+.article-category::before{content:'';display:block;width:28px;height:1px;background:var(--amber);}
+.article-title{font-family:var(--ff-display);font-size:clamp(2rem,5vw,4rem);font-weight:300;color:#fff;line-height:1.05;letter-spacing:-0.02em;margin-bottom:1.2rem;}
+.article-meta{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+.article-author{display:flex;align-items:center;gap:0.7rem;}
+.article-author-name{font-size:0.85rem;font-weight:600;color:var(--cream);}
+.article-author-title{font-family:var(--ff-mono);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+.article-date{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+.article-read-time{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+
+/* ARTICLE BODY */
+.article-body{max-width:860px;margin:0 auto;padding:4rem 2.5rem;}
+.article-body h2{font-family:var(--ff-display);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:300;color:var(--earth);margin:2.5rem 0 1rem;line-height:1.2;}
+.article-body h3{font-family:var(--ff-display);font-size:1.3rem;font-weight:500;color:var(--earth);margin:2rem 0 0.8rem;}
+.article-body p{font-size:1rem;color:var(--warm-mid);line-height:1.9;margin-bottom:1.4rem;}
+.article-body p strong{color:var(--earth);font-weight:600;}
+.article-body p em{font-style:italic;color:var(--amber);}
+.article-body ul,.article-body ol{margin:1rem 0 1.4rem 1.5rem;display:flex;flex-direction:column;gap:0.6rem;}
+.article-body li{font-size:0.95rem;color:var(--warm-mid);line-height:1.7;}
+.article-body blockquote{border-left:3px solid var(--amber);padding:1.2rem 1.8rem;margin:2rem 0;background:var(--amber-pale);}
+.article-body blockquote p{font-family:var(--ff-display);font-size:1.2rem;font-style:italic;color:var(--earth);margin:0;}
+.article-body .article-divider{border:none;border-top:1px solid var(--border-light);margin:2.5rem 0;}
+/* Key takeaway box */
+.key-takeaway{background:var(--earth);padding:2rem 2.5rem;margin:2.5rem 0;}
+.kt-label{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:0.8rem;}
+.kt-text{font-family:var(--ff-display);font-size:1.2rem;font-weight:300;color:var(--cream);line-height:1.5;}
+/* External link style */
+.ext-link{color:var(--amber);border-bottom:1px solid rgba(192,124,42,0.4);transition:border-color 0.2s;}
+.ext-link:hover{border-color:var(--amber);}
+
+/* RELATED PROGRAMS */
+.related-programs{background:var(--black);padding:5rem 0;}
+.rp-inner{max-width:860px;margin:0 auto;padding:0 2.5rem;}
+.rp-label{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem;}
+.rp-title{font-family:var(--ff-display);font-size:1.8rem;font-weight:300;color:#fff;margin-bottom:2rem;}
+.rp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.rp-card{background:var(--near-black);border:1px solid var(--border-dark);padding:1.5rem;transition:border-color 0.2s;text-decoration:none;display:block;}
+.rp-card:hover{border-color:var(--amber);}
+.rp-card-num{font-family:var(--ff-mono);font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:0.5rem;}
+.rp-card-name{font-family:var(--ff-display);font-size:1rem;font-weight:500;color:#fff;margin-bottom:0.3rem;}
+.rp-card-desc{font-size:0.75rem;color:var(--muted);line-height:1.6;}
+@media(max-width:700px){.rp-grid{grid-template-columns:1fr;}}
+
+/* AUTHOR BIO */
+.author-bio{background:var(--dark);padding:4rem 0;border-top:1px solid var(--border-dark);}
+.ab-inner{max-width:860px;margin:0 auto;padding:0 2.5rem;display:flex;gap:2rem;align-items:flex-start;}
+.ab-text{flex:1;}
+.ab-label{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:0.5rem;}
+.ab-name{font-family:var(--ff-display);font-size:1.4rem;font-weight:500;color:#fff;margin-bottom:0.4rem;}
+.ab-title{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--amber);margin-bottom:0.8rem;}
+.ab-desc{font-size:0.85rem;color:var(--light-muted);line-height:1.85;margin-bottom:1.2rem;}
+.ab-cta{display:flex;gap:1rem;flex-wrap:wrap;}
+
+/* CTA STRIP */
+.cta-strip{background:var(--earth);padding:3rem 0;text-align:center;}
+.cs-inner{max-width:860px;margin:0 auto;padding:0 2.5rem;}
+.cs-title{font-family:var(--ff-display);font-size:1.8rem;font-weight:300;color:#fff;margin-bottom:0.6rem;}
+.cs-sub{font-size:0.85rem;color:rgba(244,240,232,0.6);margin-bottom:1.5rem;}
+
+/* FOOTER */
+.article-footer{background:var(--black);padding:2rem 2.5rem;border-top:1px solid var(--border-dark);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.af-copy{font-family:var(--ff-mono);font-size:0.58rem;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;}
+.af-back{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);}
+.af-back:hover{color:var(--amber-light);}
+
+/* WhatsApp */
+.wa{position:fixed;bottom:1.8rem;right:1.8rem;z-index:100;background:var(--moss-light);color:#fff;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 4px 20px rgba(0,0,0,0.35);transition:background 0.2s;}
+.wa:hover{background:#3d6b3e;}
+
+/* a11y: keyboard focus */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px;}
+a:focus,button:focus,input:focus{outline:none;}
+/* mobile nav */
+.nav-toggle{display:none;background:transparent;border:none;color:var(--cream,#f4f0e8);padding:.5rem;cursor:pointer;width:44px;height:44px;align-items:center;justify-content:center;}
+.nav-toggle svg{width:24px;height:24px;}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(13,12,10,.97);backdrop-filter:blur(14px);z-index:300;padding:5rem 2rem 2rem;flex-direction:column;gap:1.2rem;overflow-y:auto;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-family:var(--ff-mono,monospace);font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream,#f4f0e8);padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.08);text-decoration:none;}
+.mobile-menu a:hover{color:var(--amber,#c07c2a);}
+.mobile-close{position:absolute;top:1.5rem;right:1.5rem;background:transparent;border:none;color:var(--cream,#f4f0e8);font-size:2rem;cursor:pointer;width:44px;height:44px;line-height:1;}
+@media(max-width:900px){.nav-toggle{display:flex;}}
+@media(max-width:700px){.nav-toggle{display:flex;}}
+</style>
+<link rel="canonical" href="article-template.html"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="theme-color" content="#0d0c0a"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="article-template.html"/>
+<meta property="og:title" content="Article — Anandamide Sports Solutions"/>
+<meta property="og:description" content="Insights on sports performance, kinaesthetic learning, periodisation and the science of training."/>
+<meta property="og:image" content="https://www.anandamidesports.com/assets/og-image.jpg"/>
+<meta property="og:site_name" content="Anandamide Sports Solutions"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Article — Anandamide Sports Solutions"/>
+<meta name="twitter:description" content="Insights on sports performance, kinaesthetic learning, periodisation and the science of training."/>
+<meta name="twitter:image" content="https://www.anandamidesports.com/assets/og-image.jpg"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Article Headline","author":{"@type":"Organization","name":"Anandamide Sports Solutions LLP"},"publisher":{"@type":"Organization","name":"Anandamide Sports Solutions LLP","logo":{"@type":"ImageObject","url":"https://www.anandamidesports.com/assets/logo.png"}},"datePublished":"2026-01-01","mainEntityOfPage":"article-template.html"}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="img-dcd095369a.jpg" alt="Anandamide Sports Solutions LLP"/ loading="lazy"/>
+  </a>
+  <div class="nav-links">
+    <a href="https://www.anandamidesports.com/#programs" class="nav-link">Programs</a>
+    <a href="https://www.anandamidesports.com/#framework" class="nav-link">Framework</a>
+    <a href="https://www.anandamidesports.com/#cbhpp" class="nav-link">CBHPP</a>
+    <a href="https://www.anandamidesports.com/#contact" class="nav-link">Contact</a>
+  </div>
+  <a href="https://www.anandamidesports.com/#contact" class="nav-cta">Book Free Consultation</a>
+
+<button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+</button>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Main navigation">
+<button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+<a href="https://www.anandamidesports.com/#programs" data-mm-link>Programs</a>
+<a href="https://www.anandamidesports.com/#framework" data-mm-link>Framework</a>
+<a href="https://www.anandamidesports.com/#cbhpp" data-mm-link>CBHPP</a>
+<a href="https://www.anandamidesports.com/#contact" data-mm-link>Contact</a>
+</div></nav>
+
+<!-- ARTICLE HERO -->
+<section class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-category">Sports Nutrition</div>
+    <h1 class="article-title">The Role of Protein Timing in Athletic Recovery</h1>
+    <div class="article-meta">
+      <div class="article-author">
+        <div>
+          <div class="article-author-name">Pradeep Ramachandran Pillay</div>
+          <div class="article-author-title">M.Sc. Sports Performance · Founder, Anandamide Sports Solutions</div>
+        </div>
+      </div>
+      <span class="article-date"><!-- DATE e.g. May 2026 --></span>
+      <span class="article-read-time"><!-- READ TIME e.g. 6 min read --></span>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE BODY -->
+<article class="article-body">
+
+  <p><strong>This is a placeholder article.</strong> Replace this content with your article text. Each paragraph goes inside a &lt;p&gt; tag like this one.</p>
+
+  <h2>Section Heading</h2>
+  <p>Your content goes here. Write naturally — the formatting will handle itself. You can make text <strong>bold</strong> or <em>italic in amber</em> for emphasis.</p>
+
+  <blockquote>
+    <p>"A powerful quote or key insight goes here — from research, from your experience, or from the CBHPP framework."</p>
+  </blockquote>
+
+  <h3>Sub-section heading</h3>
+  <p>More content here. You can add bullet points:</p>
+  <ul>
+    <li>First key point</li>
+    <li>Second key point</li>
+    <li>Third key point</li>
+  </ul>
+
+  <div class="key-takeaway">
+    <span class="kt-label">Key Takeaway</span>
+    <div class="kt-text">The single most important thing to remember from this article — in one or two sentences.</div>
+  </div>
+
+  <h2>External Resources</h2>
+  <p>For further reading, see:
+    <a href="#" target="_blank" rel="noopener noreferrer" class="ext-link">Article title from external source →</a>
+  </p>
+
+  <p>You can add as many external links as you like. Each one opens in a new tab.</p>
+
+  <hr class="article-divider"/>
+  <p><em>Train the Mind to Train the Brain — Anandamide Sports Solutions LLP</em></p>
+
+</article>
+
+<!-- RELATED PROGRAMS -->
+<section class="related-programs">
+  <div class="rp-inner">
+    <div class="rp-label">Explore</div>
+    <div class="rp-title">Related Programmes</div>
+    <div class="rp-grid">
+      <a href="https://www.anandamidesports.com/#programs" class="rp-card">
+        <span class="rp-card-num">Programme</span>
+        <div class="rp-card-name">Sports Nutrition</div>
+        <div class="rp-card-desc">Performance-specific dietary planning · Online &amp; In-Person</div>
+      </a>
+      <a href="https://www.anandamidesports.com/#programs" class="rp-card">
+        <span class="rp-card-num">Programme</span>
+        <div class="rp-card-name">Strength &amp; Conditioning</div>
+        <div class="rp-card-desc">Sport-specific strength &amp; power · IRFU-affiliated methodology</div>
+      </a>
+      <a href="https://www.anandamidesports.com/#contact" class="rp-card">
+        <span class="rp-card-num">Get Started</span>
+        <div class="rp-card-name">Book Free Consultation</div>
+        <div class="rp-card-desc">Discuss your goals with Pradeep · Respond within 24 hours</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHOR BIO -->
+<section class="author-bio">
+  <div class="ab-inner">
+    <div class="ab-text">
+      <span class="ab-label">About the Author</span>
+      <div class="ab-name">Pradeep Ramachandran Pillay</div>
+      <div class="ab-title">M.Sc. Sports Performance · Founder, Anandamide Sports Solutions LLP · 25+ Years Elite Experience</div>
+      <p class="ab-desc">S&amp;C Coach (IRFU Affiliated) · ABA Boxing Tutor · 2nd Degree Black Belt · REPS Level 3 (UK). Formerly at Abhinav Bindra Targeting Performance, Alexander Waske Tennis University, and TransStadia Sports Performance Centre.</p>
+      <div class="ab-cta">
+        <a href="https://www.anandamidesports.com/#founder" class="btn btn-ghost">Meet Pradeep</a>
+        <a href="https://www.anandamidesports.com/#contact" class="btn btn-gold">Book a Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="cta-strip">
+  <div class="cs-inner">
+    <div class="cs-title">Ready to apply this to your training?</div>
+    <div class="cs-sub">Book a free consultation with Pradeep — online, Ahmedabad or Kerala.</div>
+    <a href="https://www.anandamidesports.com/#contact" class="btn btn-gold">Book Free Consultation</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="article-footer">
+  <span class="af-copy">© 2026 Anandamide Sports Solutions LLP · anandamidesports.com</span>
+  <a href="index.html" class="af-back" onclick="window.location.replace('https://www.anandamidesports.com/');return false;">← Back to Anandamide</a>
+</div>
+
+<!-- WhatsApp -->
+<a class="wa" href="https://wa.me/918128978746" target="_blank" rel="noopener noreferrer" title="WhatsApp Pradeep">💬</a>
+
+
+<!-- GoatCounter Analytics -->
+<script data-goatcounter="https://pradeep.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<script>
+(function(){var t=document.getElementById('navToggle'),m=document.getElementById('mobileMenu'),c=document.getElementById('mobileClose');if(!t||!m)return;function o(){m.classList.add('open');t.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}function x(){m.classList.remove('open');t.setAttribute('aria-expanded','false');document.body.style.overflow='';}t.addEventListener('click',o);if(c)c.addEventListener('click',x);m.querySelectorAll('[data-mm-link]').forEach(function(a){a.addEventListener('click',x);});document.addEventListener('keydown',function(e){if(e.key==='Escape')x();});})();
+</script></body>
+</html>
