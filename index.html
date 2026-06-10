@@ -1828,7 +1828,7 @@ ct-layout">
         </div>
       </div>
       <div>
-        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" data-todo="REPLACE-WITH-REAL-FORMSPREE-ID" method="POST" id="contactForm">
+        <form action="https://formspree.io/f/mrevlebd" method="POST" id="contactForm">
           <input type="hidden" name="_subject" value="New Enquiry — Anandamide Sports Solutions"/>
           <input type="hidden" name="_cc" value="anandamide74@gmail.com"/>
           <div class="f-row">
@@ -1876,14 +1876,14 @@ ct-layout">
         <p class="ec-desc">5 principles of sustainable high performance — used with athletes, professionals and high performers across India and internationally. Free, practical, evidence-aware.</p>
       </div>
       <div class="ec-right">
-        <form class="ec-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" data-todo="REPLACE-WITH-REAL-FORMSPREE-ID" method="POST">
+        <form class="ec-form" action="https://formspree.io/f/mrevlebd" method="POST" id="ecForm">
           <input type="hidden" name="_subject" value="Lead Magnet — Performance Without Burnout"/>
           <div class="ec-fields">
             <input type="text" name="name" placeholder="Your name" class="ec-input" required/>
             <input type="email" name="email" placeholder="Your email" class="ec-input" required/>
-            <button type="submit" class="ec-btn">Send Me the Guide →</button>
+            <button type="submit" class="ec-btn" id="ecBtn">Send Me the Guide →</button>
           </div>
-          <div class="ec-note">No spam. Unsubscribe anytime.</div>
+          <div class="ec-note" id="ecNote">No spam. Unsubscribe anytime.</div>
         </form>
       </div>
     </div>
@@ -1987,5 +1987,73 @@ window.addEventListener('scroll',()=>{
 
 <script>
 (function(){var t=document.getElementById('navToggle'),m=document.getElementById('mobileMenu'),c=document.getElementById('mobileClose');if(!t||!m)return;function o(){m.classList.add('open');t.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}function x(){m.classList.remove('open');t.setAttribute('aria-expanded','false');document.body.style.overflow='';}t.addEventListener('click',o);if(c)c.addEventListener('click',x);m.querySelectorAll('[data-mm-link]').forEach(function(a){a.addEventListener('click',x);});document.addEventListener('keydown',function(e){if(e.key==='Escape')x();});})();
-</script></body>
+</script>
+<script>
+/* Formspree AJAX submission — keeps user on page, shows inline success/error */
+(function(){
+  function attachAjax(form, opts){
+    if(!form) return;
+    var btn = opts.btn ? form.querySelector(opts.btn) : form.querySelector('button[type=submit]');
+    var origBtnText = btn ? btn.textContent : '';
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      if(btn){ btn.disabled = true; btn.textContent = 'Sending...'; }
+      try{
+        var res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if(res.ok){
+          if(opts.onSuccess){ opts.onSuccess(form); }
+          form.reset();
+        } else {
+          var data = await res.json().catch(function(){return {};});
+          var msg = (data.errors && data.errors.length)
+            ? data.errors.map(function(e){return e.message;}).join(', ')
+            : 'Submission failed. Please email pradeep.pillay@gmail.com directly.';
+          if(opts.onError){ opts.onError(form, msg); } else { alert(msg); }
+        }
+      } catch(err){
+        if(opts.onError){ opts.onError(form, 'Network error. Please try again or email pradeep.pillay@gmail.com.'); }
+        else { alert('Network error. Please email pradeep.pillay@gmail.com.'); }
+      } finally {
+        if(btn){ btn.disabled = false; btn.textContent = origBtnText; }
+      }
+    });
+  }
+  /* Main contact form */
+  attachAjax(document.getElementById('contactForm'), {
+    btn: '#submitBtn',
+    onSuccess: function(form){
+      var ok = document.getElementById('form-success');
+      var err = document.getElementById('form-error');
+      if(ok){ ok.style.display = 'block'; ok.scrollIntoView({behavior:'smooth', block:'center'}); }
+      if(err){ err.style.display = 'none'; }
+    },
+    onError: function(form, msg){
+      var ok = document.getElementById('form-success');
+      var err = document.getElementById('form-error');
+      if(err){ err.textContent = msg; err.style.display = 'block'; }
+      if(ok){ ok.style.display = 'none'; }
+    }
+  });
+  /* Email capture (lead magnet) form */
+  attachAjax(document.getElementById('ecForm'), {
+    btn: '#ecBtn',
+    onSuccess: function(form){
+      var note = document.getElementById('ecNote');
+      if(note){
+        note.textContent = '✓ Thanks! Check your inbox — your guide is on the way.';
+        note.style.color = '#a8d4aa';
+      }
+    },
+    onError: function(form, msg){
+      var note = document.getElementById('ecNote');
+      if(note){ note.textContent = msg; note.style.color = '#e8a8a8'; }
+    }
+  });
+})();
+</script>
+</body>
 </html>
